@@ -16,8 +16,12 @@ def main():
 
     if st.button('Generate Suggestions'):
         if resume is not None and job_url and company_url and company_name:
-            results = resume_processing.process_resume(resume)
-            # TODO: handle resume processing and cover letter generation
+            results = resume_processing.process_resume(resume, job_url)
+            # Display the contents of the resume and the job description
+            st.write('Resume:')
+            st.write(results['resume'])
+            st.write('Job Description:')
+            st.write(results['job_description'])
             st.success('Generated suggestions successfully!')
         else:
             st.error('Please fill in all fields')
