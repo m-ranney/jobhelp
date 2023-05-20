@@ -9,9 +9,10 @@ import os
 
 def save_uploaded_file(uploaded_file):
     try:
-        with open(os.path.join('tmp',uploaded_file.name),'wb') as f:
+        os.makedirs('tmp', exist_ok=True)  # create 'tmp' directory if it doesn't exist
+        with open(os.path.join('tmp', uploaded_file.name),'wb') as f:
             f.write(uploaded_file.getvalue())
-        return True, os.path.join('tmp',uploaded_file.name)
+        return True, os.path.join('tmp', uploaded_file.name)
     except Exception as e:
         print(e)
         return False, str(e)
