@@ -17,7 +17,7 @@ def save_uploaded_file(uploaded_file):
         print(e)
         return False, str(e)
 
-def process_resume(resume_file):
+def process_resume(resume_file, job_url):
     success, file_path_or_error_message = save_uploaded_file(resume_file)
     if not success:
         raise Exception('Error saving uploaded file: ' + file_path_or_error_message)
