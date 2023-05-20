@@ -24,7 +24,7 @@ def main():
             st.write(results['job_description'])
             st.success('Generated suggestions successfully!')
         else:
-            st.error('Please fill in all fields')
+            st.error('Please fill in all fields!')
 
 if __name__ == '__main__':
     main()
